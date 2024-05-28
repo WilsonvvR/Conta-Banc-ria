@@ -1,0 +1,52 @@
+import biblioteca
+
+# contas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 99]
+# saldo = [5000, 4000, 3000, 2000, 1000, 900, 800, 700, 600, 500]
+
+contas = []
+saldo = []
+for i in range(10):
+    numConta = int(input("Digite o número da conta: "))
+    contas.append(num)
+    valorSaldo = float(input("Digite o saldo da conta: "))
+    saldo.append(valorSaldo)    
+
+biblioteca.menu()
+
+option = int(input("Digite o número da operação que deseja realizar: "))
+
+while(option < 5):
+    
+    if (option == 1):
+        num = int(input("Digite o número da conta que deseja realizar um depósito: "))
+        valor = float(input("Digite o valor do depósito: "))
+        biblioteca.depositar(contas, saldo, num, valor)
+        biblioteca.menu()
+        option = int(input("Digite o número da operação que deseja realizar: "))
+
+    elif (option == 2):
+        num = int(input("Digite o número da conta que deseja realizar o saque: "))
+        valor = float(input("Digite o valor do saque: "))
+        biblioteca.saque(contas, saldo, num, valor)
+                
+        biblioteca.menu()
+        option = int(input("Digite o número da operação que deseja realizar: "))
+
+    elif (option == 3):
+        numOrigem = int(input("Digite o número de origem da transferência: "))
+        numDestino = int(input("Digite o número de destino da transferência: "))
+        valor = float(input("Digite o valor da transferência: "))
+        biblioteca.transfer(contas, saldo, numOrigem, numDestino, valor)
+                
+        biblioteca.menu()
+        option = int(input("Digite o número da operação que deseja realizar: "))
+        
+    elif(option == 4):
+        biblioteca.consultAtivoBancario(saldo, contas)
+
+        biblioteca.menu()
+        option = int(input("Digite o número da operação que deseja realizar: "))
+
+print(contas)
+print(saldo)
+print("FIM DO PROGRAMA")
